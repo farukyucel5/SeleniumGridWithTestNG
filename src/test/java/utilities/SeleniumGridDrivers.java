@@ -13,8 +13,6 @@ import java.net.URL;
 import java.time.Duration;
 
 public class SeleniumGridDrivers {
-
-     static DesiredCapabilities cap = new DesiredCapabilities();
     static WebDriver driver;
 
 
