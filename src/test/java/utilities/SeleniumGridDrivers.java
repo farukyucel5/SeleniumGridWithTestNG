@@ -61,43 +61,4 @@ public class SeleniumGridDrivers {
 
         return driver;
     }
-
-    public static WebDriver setUpRemoteChromeDriver(){
-        try{
-            cap.setPlatform(Platform.WINDOWS);
-            cap.setBrowserName("chrome");
-            cap.setVersion("109.0.1518.70");
-            ChromeOptions options=new ChromeOptions();
-            options.merge(cap);
-            driver=new RemoteWebDriver(new URL("http://192.168.1.26:4444"),options);
-            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
-            driver.manage().window().maximize();
-        }catch (Exception e){
-            System.out.println("Chrome Driver couldn't find "+e.getMessage());
-        }
-        return driver;
-    }
-
-    public static WebDriver setUpRemoteEdgeDriver(){
-        try{
-            cap.setPlatform(Platform.WINDOWS);
-            cap.setBrowserName("edge");
-            cap.setVersion("109.0.1518.70");
-            EdgeOptions options=new EdgeOptions();
-            options.merge(cap);
-            driver=new RemoteWebDriver(new URL("http://192.168.1.26:4444"),options);//http://192.168.8.108:4444
-            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
-            driver.manage().window().maximize();
-        }catch (Exception e){
-            System.out.println("Edge Driver couldn't find "+e.getMessage());
-        }
-        return driver;
-    }
-
-
-
-
-
-
-
 }
